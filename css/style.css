@@ -1,0 +1,285 @@
+.hero-slider {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0 20px;
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 10;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-dot.active {
+    background-color: white;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(228, 14, 14, 0.814);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 0;
+    /* Làm vuông góc, không bo tròn */
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+/* .slider-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+} */
+
+.slider-arrow.prev {
+    left: 20px;
+}
+
+.slider-arrow.next {
+    right: 20px;
+}
+
+.slider-arrow {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+#home:hover .slider-arrow {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/*khung sản phẩm*/
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.03);
+}
+
+.nav-link {
+    position: relative;
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #8B5A2B;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+.search-box {
+    transition: all 0.3s ease;
+    width: 180px;
+}
+
+.search-box:focus {
+    width: 220px;
+}
+
+/*danh mục sản phẩm*/
+.category-slide {
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 12px;
+    padding: 20px;
+}
+
+/* .category-slide.active {
+    display: flex;
+} */
+
+.category-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-align: center;
+    border: 1px solid #f3f4f6;
+}
+
+.category-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-color: #f59e0b;
+}
+
+.category-btn i {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #92400e;
+}
+
+.category-btn a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1f2937;
+}
+
+.slider-nav-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.slider-dot2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.slider-dot2.active {
+    background-color: #92400e;
+    transform: scale(1.2);
+}
+
+/* Custom CSS for animations and effects */
+.product-card2 {
+    transition: all 0.3s ease;
+}
+
+.product-card2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.category-card {
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: scale(1.03);
+}
+
+.deal-timer {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.nav-link2 {
+    position: relative;
+}
+
+.nav-link2::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+.nav-link2:hover::after {
+    width: 100%;
+}
+
+#chatbot-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chatbot-box::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+}
